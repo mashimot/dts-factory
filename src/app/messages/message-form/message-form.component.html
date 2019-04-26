@@ -1,0 +1,88 @@
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<form [formGroup]="messageForm" (submit)="onSubmit()" *ngIf="!showSpinner">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      class="form-control" 
+      formControlName="name"
+      [ngClass]="{ 'is-invalid': f.get('name').invalid }" 
+    />
+    <div *ngIf="f.get('name').invalid || f.get('name').errors" class="invalid-feedback">
+      <div *ngIf="f.get('name').errors.required">You did not enter a field</div>
+      <div *ngIf="f.get('name').errors.pattern">Only Letters are allowed</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input 
+      type="text" 
+      id="email" 
+      class="form-control" 
+      formControlName="email"
+      [ngClass]="{ 'is-invalid': f.get('email').invalid }" 
+    />
+    <div *ngIf="f.get('email').invalid || f.get('email').errors" class="invalid-feedback">
+      <div *ngIf="f.get('email').errors.required">You did not enter a field</div>
+      <div *ngIf="f.get('email').errors.email">Your email address is invalid</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input 
+      type="text" 
+      id="phone" 
+      formControlName="phoneNumber"
+      class="form-control" 
+      [ngClass]="{ 'is-invalid': f.get('phoneNumber').invalid }" 
+    />
+    <div *ngIf="f.get('phoneNumber').invalid || f.get('phoneNumber').errors" class="invalid-feedback">
+      <div *ngIf="f.get('phoneNumber').errors.required">You did not enter a field</div>
+    </div>
+  </div>
+  <div formGroupName="post">
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <select id="subject" 
+        class="form-control" 
+        formControlName="subject"      
+        [ngClass]="{ 'is-invalid': f.get('post.subject').invalid }">
+        <option value="">Select an Option</option>
+        <option *ngFor="let subject of subjects" [ngValue]="subject.id">{{ subject.value }}</option>
+      </select> 
+    </div>  
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input 
+        type="text" 
+        id="title" 
+        class="form-control" 
+        formControlName="title"
+        [ngClass]="{ 'is-invalid': f.get('post.title').invalid }" 
+      />
+      <div *ngIf="f.get('post.title').invalid || f.get('post.title').errors" class="invalid-feedback">
+          <div *ngIf="f.get('post.title').errors.required">You did not enter a field</div>
+        </div>      
+    </div>      
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea 
+      id="message" 
+      class="form-control" 
+      cols="30" rows="10" 
+      formControlName="message" 
+      [ngClass]="{ 'is-invalid': f.get('post.message') .invalid }"></textarea>
+      <p class="p-1 text-right">
+       <b>The character count is {{ f.get('post.message').value.length }}</b>
+      </p>
+      <div *ngIf="f.get('post.message').invalid || f.get('post.message').errors" class="invalid-feedback">
+        <div *ngIf="f.get('post.message').errors.required">You did not enter a field</div>
+        <div *ngIf="f.get('post.message').errors.maxlength">Max. 500 Characters</div>
+      </div>
+    </div>      
+  </div>
+  <button type="submit" class="btn btn-success float-right" [disabled]="!f.valid">
+    Enviar
+  </button>
+</form>

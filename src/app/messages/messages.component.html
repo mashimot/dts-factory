@@ -1,0 +1,35 @@
+<div class="row">  
+  <div id="message-list" class="col-md-4">
+      <a [routerLink]="['/messages', 'create']" class="btn btn-outline-primary btn-block">
+        New
+      </a>
+      <ul *ngFor="let message of messages;" (click)="showMessage(message.id)" class="list-group">
+          <li class="list-group-item" [ngStyle]="{ 'cursor': 'pointer' }">
+              <h5>{{ message.title }}</h5>
+              <p>{{ message.body }}</p>
+          </li>
+      </ul>
+  </div>
+  <div class="col-md-8">
+    <section id="message-detail" class="sticky-top pt-2">
+        <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+        <div class="card" *ngIf="!showSpinner && message != null">
+          <div class="card-body">
+              <h5>{{ message.title }}</h5>
+              <p>{{ message.body }}</p>
+          </div>
+          <div class="card-footer">
+            <div class="float-right">
+              <div class="btn-group">
+                <a [routerLink]="['/messages', message.id, 'edit']" class="btn btn-outline-primary">edit</a>
+                <button class="btn btn-outline-danger" (click)="deleteMessage(message.id)">
+                  Delete Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+</div>
+

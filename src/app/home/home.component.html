@@ -1,0 +1,178 @@
+<div class="stackedit__html">
+    <h1 id="teste-para-vaga-de-desenvolvedor-front-end">Teste para vaga de desenvolvedor Front-end</h1>
+    <h2 id="marketplace">DTS - Factory</h2>
+    <p></p>
+    <h2 id="equipe">Equipe</h2>
+    <p>Equipe de front-end será composta de desenvolvedores de todos os níveis para atender as demandas dos diversos
+      produtos da empresa.</p>
+    <h2 id="especificações-do-teste">Especificações do teste:</h2>
+    <p>Este teste engloba o fluxo de trabalho básico da equipe atual, não foge das atividades cotidianas de um
+      desenvolvedor front-end: construção do layout, aplicação de responsividade e implementação da dinâmica das telas.</p>
+    <p>O teste é composto por diversas atividades que definem a habilidade, nível profissional e experiência do
+      desenvolvedor com relação às linguagens e ferramentas utilizadas pela equipe atual no desenvolvimento das
+      aplicações.</p>
+    <p>O teste abaixo terá como objetivo avaliar o conhecimento técnico, skills e os pontos fortes do desenvolvedor nos
+      seguintes critérios:</p>
+    <ul>
+      <li>
+        <p>Domínio sobre o Angular (v6.+) e suas particularidades.</p>
+      </li>
+      <li>
+        <p>Conhecimentos sobre JavaScript, TypeScript e ES6.</p>
+      </li>
+      <li>
+        <p>Conhecimentos sobre CSS3, SASS e Angula Material.</p>
+      </li>
+      <li>
+        <p>Qualidade e legibilidade do código.</p>
+      </li>
+      <li>
+        <p>Conhecimentos básicos em GIT.</p>
+      </li>
+      <li>
+        <p>Habilidade de abstração;</p>
+      </li>
+      <li>
+        <p>Entendimento do conceito de componentização utilizando componentes simples e compostos.</p>
+      </li>
+    </ul>
+    <p>O layout da aplicação deve ser feito em angular material, baseando-se em um wireframe simples.</p>
+    <p>Quanto mais telas e funcionalidades forem implementadas utilizando técnicas, abordagens e soluções
+      diversificadas maior a possibilidade de subir o nível de classificação da vaga oferecida ao desenvolvedor.</p>
+    <p>O layout tem foco em desktop, porém deve ser adaptável minimamente para dispositiveis móveis.</p>
+    <h3 id="teste-">Teste :</h3>
+    <p>Desenvolva uma aplicação em Angular 6+ com angular material contendo as seguintes especificações:</p>
+    <h4 id="topo-e-menu-de-navegação">Topo e menu de navegação:</h4>
+    <ul>
+      <li class="task-list-item">
+        <p> Implementar um menu de navegação que possua ao menos 2 itens. Estes itens devem ser inicializados em algum
+          local da aplicação por um array de objetos contendo o título e rota do item para popular o menu.</p>
+      </li>
+      <li class="task-list-item">
+        <p> Implementar um sistema de roteamento para navegar pelas páginas dos itens do menu;</p>
+      </li>
+    </ul>
+    <ul>
+      <li class="task-list-item">
+        <p> <b>Dashboard:</b></p>
+        <ul>
+          <li>
+            <p> Implementar o cabeçalho (menu), com dados que devem vir de um serviço populado por um mock dentro da
+              aplicação;</p>
+          </li>
+          <li>
+            <p>Implementar um layout com uma coluna lateral listando as mensagens e outra coluna a direita exibindo a
+              mensagem selecionada.</p>
+          </li>
+          <li>
+            <p>Inserir um botão para excluir a mensagem selecionada.</p>
+          </li>
+          <li>
+            Wireframe: <a href="https://dtsfactory-front.github.io/front-end-test/img/teste-front-end-tela-inicial.png" target="_blank">Wireframe dashboard</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p> <b>Cadastrar mensagens:</b></p>
+        <ul>
+          <li>
+            <p>Este formulário deverá fazer um post para um serviço fictício e armazenar as mensagens cadastradas.</p>
+          </li>
+          <li>
+            <p>Implementar formulário de cadastro de mensagens contendo os seguintes campos com suas especificações:</p>
+          </li>
+          <li class="task-list-item">
+            <p> Nome :</p>
+            <ul>
+              <li>
+                <p>Um campo do tipo texto, que deverá receber o nome do usuário;</p>
+              </li>
+              <li>
+                <p>Campo obrigatório.</p>
+              </li>
+              <li>
+                <p>Campo deve aceitar apenas letras.</p>
+              </li>
+            </ul>
+          </li>
+          <li class="task-list-item">
+            <p> Email :</p>
+            <ul>
+              <li>
+                <p>Um campo do tipo texto que deverá receber o email do usuário;</p>
+              </li>
+              <li>
+                <p>Deve conter e-mail válido;</p>
+              </li>
+              <li>
+                <p>Campo obrigatório.</p>
+              </li>
+            </ul>
+          </li>
+          <li class="task-list-item">
+            <p> Assunto :</p>
+            <ul>
+              <li>
+                <p>Um campo do tipo select que deverá ser populado através de um serviço que retorna os dados de um
+                  mock;</p>
+              </li>
+              <li>
+                <p>O mock deve ser um JSON que retorne uma lista de strings assuntos para inserir no select. Ex.:
+                  [“Orçamento”, Dúvida”, “Elogio”, “Reclamação”];</p>
+              </li>
+              <li>
+                <p>Campo obrigatório.</p>
+              </li>
+            </ul>
+          </li>
+          <li class="task-list-item">
+            <p> Telefone :</p>
+            <ul>
+              <li>Um campo do tipo input com máscara de telefone, sendo um campo opcional.</li>
+              <li>Deve aceitar apenas números</li>
+            </ul>
+          </li>
+          <li class="task-list-item">
+            <p> Mensagem :</p>
+            <ul>
+              <li>
+                <p>Um campo do tipo textarea que receberá uma mensagem de até 500 caracteres;</p>
+              </li>
+              <li>
+                <p>Campo obrigatório.</p>
+              </li>
+              <li>
+                <p>Exibir abaixo do text area um count de quantos caracteres foram digitados e o limite de caracteres ex. 200/500 .</p>
+              </li>              
+            </ul>
+          </li>
+          <li class="task-list-item">
+            <p> Botão Enviar :</p>
+            <ul>
+              <li>Deve ser habilitado somente quando os campos obrigatórios forem preenchidos e os critérios de
+                validação de campos forem atingidos, após clicar enviar os dados digitados a uma lista dentro de um
+                service, após o cadastro, limpar os campos digitados;</li>
+              <li>
+                <a href="https://dtsfactory-front.github.io/front-end-test/img/teste-front-end-cadastro.png">Wireframe tela de cadastro</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="task-list-item">
+        <p> Integração :</p>
+        <ul>
+          <li>
+            <p>Listar na dashboard as mensagens cadastradas na tela anterior</p>
+          </li>
+          <li>
+            <p>Utilizar o service para recuperar as mensagens cadastradas e exibir dinamicamente na tela de dashboard</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>
+      Comitar todo o código em um respotório aberto (github, bitbucket..), e nos enviar a URL do repositório para
+      avaliação
+    </h4>
